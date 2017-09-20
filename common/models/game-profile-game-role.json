@@ -1,0 +1,24 @@
+{
+  "name": "GameProfileGameRole",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "gameProfile": {
+      "type": "belongsTo",
+      "model": "GameProfile",
+      "foreignKey": ""
+    },
+    "gameRole": {
+      "type": "belongsTo",
+      "model": "GameRole",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

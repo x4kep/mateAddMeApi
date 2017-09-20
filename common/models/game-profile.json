@@ -1,0 +1,90 @@
+{
+  "name": "GameProfile",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "experience": {
+      "type": "string",
+      "required": false
+    },
+    "availability": {
+      "type": "string",
+      "required": false
+    },
+    "contactLink": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "game": {
+      "type": "belongsTo",
+      "model": "Game",
+      "foreignKey": ""
+    },
+    "player": {
+      "type": "belongsTo",
+      "model": "Player",
+      "foreignKey": ""
+    },
+    "gameRank": {
+      "type": "belongsTo",
+      "model": "GameRank",
+      "foreignKey": ""
+    },
+    "gameRole": {
+      "type": "belongsTo",
+      "model": "GameRole",
+      "foreignKey": ""
+    },
+    "gameMode": {
+      "type": "belongsTo",
+      "model": "GameMode",
+      "foreignKey": ""
+    },
+    "gameRegion": {
+      "type": "belongsTo",
+      "model": "GameRegion",
+      "foreignKey": ""
+    },
+    "gameProfileComments": {
+      "type": "hasMany",
+      "model": "GameProfileComment",
+      "foreignKey": "gameProfileId",
+      "keyThrough": "gameProfile"
+    },
+    "gameModes": {
+      "type": "hasMany",
+      "model": "GameProfileGameMode",
+      "foreignKey": ""
+    },
+    "gameRegions": {
+      "type": "hasMany",
+      "model": "GameProfileGameRegion",
+      "foreignKey": ""
+    },
+    "gameRoles": {
+      "type": "hasMany",
+      "model": "GameProfileGameRole",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

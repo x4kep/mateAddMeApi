@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlds": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "mateaddme",
+    "password": "",
+    "name": "mysqlds",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

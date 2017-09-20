@@ -1,0 +1,81 @@
+{
+  "name": "Player",
+  "base": "User",
+  "idInjection": true,
+  "options": {},
+  "properties": {
+    "gender": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "role": {
+      "type": "string"
+    },
+    "biography": {
+      "type": "string"
+    },
+    "isBaned": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gameProfiles": {
+      "type": "hasMany",
+      "model": "GameProfile",
+      "foreignKey": ""
+    },
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
+    },
+    "country": {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": ""
+    },
+    "language": {
+      "type": "belongsTo",
+      "model": "Language",
+      "foreignKey": ""
+    },
+    "languages": {
+      "type": "hasMany",
+      "model": "PlayerLanguage",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

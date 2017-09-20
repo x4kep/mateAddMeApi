@@ -1,0 +1,62 @@
+{
+  "name": "Game",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {},
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "genre": {
+      "type": "string",
+      "required": true
+    },
+    "shortName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gameRoles": {
+      "type": "hasMany",
+      "model": "GameRole",
+      "foreignKey": ""
+    },
+    "gameRanks": {
+      "type": "hasMany",
+      "model": "GameRank",
+      "foreignKey": ""
+    },
+    "gameModes": {
+      "type": "hasMany",
+      "model": "GameMode",
+      "foreignKey": ""
+    },
+    "gameRegions": {
+      "type": "hasMany",
+      "model": "GameRegion",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "find"
+    }
+  ],
+  "methods": {}
+}

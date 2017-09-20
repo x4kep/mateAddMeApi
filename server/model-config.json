@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "User",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Player": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "Game": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "Country": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameRole": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameRank": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameMode": {
+    "dataSource": "mysqlds",
+    "public": false
+  },
+  "GameProfile": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameRegion": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameProfileComment": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameProfileGameMode": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameProfileGameRegion": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "GameProfileGameRole": {
+    "dataSource": "mysqlds",
+    "public": true
+  },
+  "PlayerLanguage": {
+    "dataSource": "mysqlds",
+    "public": true
+  }
+}

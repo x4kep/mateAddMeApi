@@ -1,0 +1,33 @@
+{
+  "name": "GameProfileComment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "player": {
+      "type": "belongsTo",
+      "model": "Player",
+      "foreignKey": ""
+    },
+    "gameProfile": {
+      "type": "belongsTo",
+      "model": "GameProfile",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

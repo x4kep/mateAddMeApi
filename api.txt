@@ -1,0 +1,52 @@
+//Create LOL game profile
+
+GameProfile.create([{gameId: 2, playerId: 1, gameRankId: 1, gameR
+oleId:1, gameModeId: 1}])
+
+//Delete GameProfile By id
+GameProfile.destroyById(1)
+
+//Find all GameProfiles
+GameProfile.find()
+
+//Find all GameProfiles andG include Relations
+GameProfile.find({"include":["gameRank","gameMode","gameRole"]})
+
+
+//UPDATE
+
+//PUT DELET OLD STATE 
+PUT /GameProfiles/{id}
+PARAMS:
+{
+  "isActive": true,
+  "experience": "string",
+  "availability": "string",
+  "id": 0,
+  "gameId": 0,
+  "playerId": 0,
+  "gameRankId": 0,
+  "gameRoleId": 0,
+  "gameModeId": 0,
+  "gameRegionId": 0
+}
+
+//DO PATCH 
+PATCH /GameProfiles/{id}
+PARAMS:
+{
+  "isActive": true,
+  "experience": "string",
+  "availability": "string",
+  "id": 0,
+  "gameId": 0,
+  "playerId": 0,
+  "gameRankId": 0,
+  "gameRoleId": 0,
+  "gameModeId": 0,
+  "gameRegionId": 0
+}
+
+//DO FILTER PLAYERS By ID OF ITEMS
+{"where":{"isActive":true, "gameId":1, "playerId":1, "gameRankId":6, "gameRoleId":2, "gameModeId":3, "gameRegionId":2}}
+

@@ -1,0 +1,24 @@
+{
+  "name": "GameProfileGameRegion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "gameProfile": {
+      "type": "belongsTo",
+      "model": "GameProfile",
+      "foreignKey": ""
+    },
+    "gameRegion": {
+      "type": "belongsTo",
+      "model": "GameRegion",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "GameRole",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {
+    "order": "order"
+  },
+  "properties": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gameProfiles": {
+      "type": "hasMany",
+      "model": "GameProfile",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
